@@ -19,6 +19,10 @@
     <button [disabled]="!loginForm.valid" class="btn btn-outline-light my-2 my-sm-0" type="submit">Login</button>
   </form>
 
-  <button *ngIf="loggedIn()" (click)="logout()" class="btn btn-outline-light my-2 my-sm-0">Logout</button>
+  <div *ngIf="loggedIn()">
+    <span class="badge badge-primary">logged in as {{authService.decodedToken.email}}</span>
+    <button  (click)="logout()" class="btn btn-outline-light my-2 my-sm-0">Logout</button>
+  </div>
+  
 
 </nav>
