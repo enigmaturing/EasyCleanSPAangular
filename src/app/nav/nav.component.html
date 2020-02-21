@@ -20,9 +20,17 @@
   </form>
 
   <div *ngIf="loggedIn()">
-    <span class="badge badge-primary">logged in as {{authService.decodedToken.email}}</span>
-    <button  (click)="logout()" class="btn btn-outline-light my-2 my-sm-0">Logout</button>
+    <div class="btn-group" dropdown>
+      <button id="button-basic" dropdownToggle type="button" class="btn btn-outline-light my-2 my-sm-0 dropdown-toggle"
+              aria-controls="dropdown-basic">logged in as {{authService.decodedToken.email}}<span class="caret"></span>
+      </button>
+      <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
+          role="menu" aria-labelledby="button-basic">
+        <li role="menuitem"><a class="dropdown-item" href="#">Settings</a></li>
+        <li class="divider dropdown-divider"></li>
+        <li role="menuitem"><a class="dropdown-item" (click)="logout()">Logout</a></li>
+      </ul>
+    </div>
   </div>
   
-
 </nav>
