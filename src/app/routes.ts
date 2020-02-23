@@ -6,8 +6,8 @@ import { MachinesListComponent } from './machines-list/machines-list.component';
 import { SalesListComponent } from './sales-list/sales-list.component';
 
 export const appRoutes: Routes = [
-    { path: 'home', component: HomeComponent},
     { path: 'dashboard', component: DashboardComponent},
+    { path: 'home', component: HomeComponent},
     { path: 'sales', component: SalesListComponent},
     { path: 'clients', component: ClientsListComponent},
     { path: 'machines', component: MachinesListComponent},
