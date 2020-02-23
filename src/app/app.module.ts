@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { BsDropdownModule } from 'ngx-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
@@ -15,6 +16,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ClientsListComponent } from './clients-list/clients-list.component';
 import { MachinesListComponent } from './machines-list/machines-list.component';
 import { SalesListComponent } from './sales-list/sales-list.component';
+import { appRoutes } from './routes';
 
 @NgModule({
    declarations: [
@@ -32,7 +34,8 @@ import { SalesListComponent } from './sales-list/sales-list.component';
       HttpClientModule,
       FormsModule,
       BsDropdownModule.forRoot(),
-      BrowserAnimationsModule
+      BrowserAnimationsModule,
+      RouterModule.forRoot(appRoutes)
    ],
    providers: [
       AuthService,
