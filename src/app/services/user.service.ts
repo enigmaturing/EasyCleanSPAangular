@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from '../models/user';
 import { environment } from '../../environments/environment';
+import { UserDetailed } from '../models/user-detailed';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -23,7 +24,7 @@ export class UserService {
     return this.http.get<User[]>(this.baseUrl, httpOptions);
   }
 
-  getUser(id): Observable<User>{
-    return this.http.get<User>(this.baseUrl + id, httpOptions);
+  getUser(id): Observable<UserDetailed>{
+    return this.http.get<UserDetailed>(this.baseUrl + id, httpOptions);
   }
 }

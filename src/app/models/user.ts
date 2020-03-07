@@ -1,15 +1,14 @@
-import { Purchase } from './purchase';
-
 export interface User {
     id: number;
-    email: string;
-    created: Date;
+    name: string;
+    surname: string;
     lastActive: Date;
+    street: string;
+    number: number;
+    zip: number;
     photoUrl: string;
     remainingCredit: number;
     age?: number;
     city?: string;
     country?: string;
-    gender?: string;
-    purchases?: Purchase[];
 }
