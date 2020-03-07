@@ -17,6 +17,7 @@ import { ClientsListComponent } from './clients/clients-list/clients-list.compon
 import { MachinesListComponent } from './machines-list/machines-list.component';
 import { SalesListComponent } from './sales-list/sales-list.component';
 import { appRoutes } from './routes';
+import { ClientCardComponent } from './clients/client-card/client-card.component';
 
 @NgModule({
    declarations: [
@@ -27,7 +28,8 @@ import { appRoutes } from './routes';
       DashboardComponent,
       ClientsListComponent,
       MachinesListComponent,
-      SalesListComponent
+      SalesListComponent,
+      ClientCardComponent
    ],
    imports: [
       BrowserModule,
