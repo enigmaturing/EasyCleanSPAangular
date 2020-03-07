@@ -13,7 +13,7 @@ import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { ErrorInterceptorProvider } from './services/error.interceptor';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { ClientsListComponent } from './clients-list/clients-list.component';
+import { ClientsListComponent } from './clients/clients-list/clients-list.component';
 import { MachinesListComponent } from './machines-list/machines-list.component';
 import { SalesListComponent } from './sales-list/sales-list.component';
 import { appRoutes } from './routes';
