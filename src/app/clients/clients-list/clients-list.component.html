@@ -1,9 +1,7 @@
 <div class="container">
-    <div class="row">
-        <div class="col-lg-2 col-md-3 col-sm-6">
-            <p *ngFor="let user of users">
-                {{ user.name + ' ' + user.surname + ' (' + user.age + ')'}}
-            </p>
-        </div>
+    <div class="row mt-3">
+        <p *ngFor="let user of users">
+            <app-client-card [user]=user></app-client-card>
+        </p>
     </div>
 </div>
