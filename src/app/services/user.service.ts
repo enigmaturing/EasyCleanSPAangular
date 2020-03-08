@@ -5,12 +5,6 @@ import { User } from '../models/user';
 import { environment } from '../../environments/environment';
 import { UserDetailed } from '../models/user-detailed';
 
-const httpOptions = {
-  headers: new HttpHeaders({
-    Authorization: 'Bearer ' + localStorage.getItem('token') // mind the space after bearer!!
-  })
-};
-
 @Injectable({
   providedIn: 'root'
 })
@@ -21,10 +15,10 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   getUsers(): Observable<User[]>{
-    return this.http.get<User[]>(this.baseUrl, httpOptions);
+    return this.http.get<User[]>(this.baseUrl);
   }
 
   getUser(id): Observable<UserDetailed>{
-    return this.http.get<UserDetailed>(this.baseUrl + id, httpOptions);
+    return this.http.get<UserDetailed>(this.baseUrl + id);
   }
 }
