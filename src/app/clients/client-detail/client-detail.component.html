@@ -1,5 +1,53 @@
-<p>{{ user?.name }} {{ user.surname }}</p>
-<p>{{ user?.dateOfBirt }}</p>
-<p>{{ user?.street }} {{ user?.number }}</p>
-<p>{{ user?.zip }} {{ user?.city }}</p>
-<p>{{ user?.remainingCredit }} €</p>
+<div class="container mt-4">
+
+    <div class="row">
+
+        <div class="col-sm-4">
+
+            <div class="card">
+                <img src="{{user?.photoUrl}}" class="card-img-top" alt="Image not available">
+                <div class="card-body">
+                    <h5 class="card-title">{{user?.name}} {{user?.surname}}</h5>
+                    <div class="card-text">
+                        <div>
+                            <strong>Location:</strong>
+                            <p>{{user?.street}}, {{user?.number}} {{user?.zip}} {{user?.city}}</p>
+                        </div>
+                        <div>
+                            <strong>Birthdate:</strong>
+                            <p>{{user?.dateOfBirth}}</p>
+                        </div>
+                        <div>
+                            <strong>Email:</strong>
+                            <p>{{user?.email}}</p>
+                        </div>
+                        <div>
+                            <strong>Member since:</strong>
+                            <p>{{user?.created}}</p>
+                        </div>
+                        <div>
+                            <strong>Last active:</strong>
+                            <p>{{user?.lastActive}}</p>
+                        </div>
+                        <div>
+                            <strong>Remaining credit:</strong>
+                            <p>{{user?.remainingCredit}} €</p>
+                        </div>
+
+                        <div>
+                            <button type="button" class="btn btn-primary btn-shared-line">Send gift</button>
+                            <button type="button" class="btn btn-secondary btn-shared-line">Contact</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-sm-8">
+            
+        </div>
+
+    </div>
+
+</div>
