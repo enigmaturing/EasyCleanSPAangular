@@ -5,33 +5,33 @@
         <div class="col-sm-4">
 
             <div class="card">
-                <img src="{{user?.photoUrl}}" class="card-img-top" alt="Image not available">
+                <img src="{{user.photoUrl}}" class="card-img-top" alt="Image not available">
                 <div class="card-body">
-                    <h5 class="card-title">{{user?.name}} {{user?.surname}}</h5>
+                    <h5 class="card-title">{{user.name}} {{user.surname}}</h5>
                     <div class="card-text">
                         <div>
                             <strong>Location:</strong>
-                            <p>{{user?.street}}, {{user?.number}} {{user?.zip}} {{user?.city}}</p>
+                            <p>{{user.street}}, {{user.number}} {{user.zip}} {{user.city}}</p>
                         </div>
                         <div>
                             <strong>Birthdate:</strong>
-                            <p>{{user?.dateOfBirth}}</p>
+                            <p>{{user.dateOfBirth}}</p>
                         </div>
                         <div>
                             <strong>Email:</strong>
-                            <p>{{user?.email}}</p>
+                            <p>{{user.email}}</p>
                         </div>
                         <div>
                             <strong>Member since:</strong>
-                            <p>{{user?.created}}</p>
+                            <p>{{user.created}}</p>
                         </div>
                         <div>
                             <strong>Last active:</strong>
-                            <p>{{user?.lastActive}}</p>
+                            <p>{{user.lastActive}}</p>
                         </div>
                         <div>
                             <strong>Remaining credit:</strong>
-                            <p>{{user?.remainingCredit}} €</p>
+                            <p>{{user.remainingCredit}} €</p>
                         </div>
 
                         <div>
@@ -48,11 +48,11 @@
             <div class="tab-panel">
                 <tabset class="member-tabset">
                     <tab heading="Purchases">
-                        <h4>Purchases of {{user?.name}}:</h4>
+                        <h4>Purchases of {{user.name}}:</h4>
                         <p>ToDo: List of purchaes go here</p>
                     </tab>
                     <tab heading="Recharges">
-                        <h4>Recharges of {{user?.name}}:</h4>
+                        <h4>Recharges of {{user.name}}:</h4>
                         <p>ToDo: List of recharges go here</p>
                     </tab>
                 </tabset>
