@@ -1,4 +1,5 @@
 import { Purchase } from './purchase';
+import { Topup } from './topup';
 
 export interface UserDetailed {
     id: number;
@@ -16,4 +17,5 @@ export interface UserDetailed {
     photoUrl: string;
     remainingCredit: number;
     purchases: Purchase[];
+    topups: Topup[];
 }

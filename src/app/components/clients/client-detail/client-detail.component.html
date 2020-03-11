@@ -48,12 +48,22 @@
             <div class="tab-panel">
                 <tabset class="member-tabset">
                     <tab heading="Purchases">
-                        <h4>Purchases of {{user.name}}:</h4>
-                        <p>ToDo: List of purchaes go here</p>
+                        <div class="media mb-3" *ngFor="let purchase of user.purchases">
+                            <img src="..." class="mr-3" alt="...">
+                            <div class="media-body">
+                                <h5 class="mt-0">{{purchase.dateOfPurchase}}</h5>
+                                {{purchase.pricePaid}}
+                            </div>
+                        </div>
                     </tab>
                     <tab heading="Recharges">
-                        <h4>Recharges of {{user.name}}:</h4>
-                        <p>ToDo: List of recharges go here</p>
+                        <div class="media mb-3" *ngFor="let topup of user.topups">
+                            <img src="..." class="mr-3" alt="...">
+                            <div class="media-body">
+                                <h5 class="mt-0">{{topup.dateOfTopup}}</h5>
+                                {{topup.amount}} €
+                            </div>
+                        </div>
                     </tab>
                 </tabset>
             </div>

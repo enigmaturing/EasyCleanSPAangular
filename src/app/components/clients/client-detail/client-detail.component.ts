@@ -20,6 +20,7 @@ export class ClientDetailComponent implements OnInit {
   loadUser() {
     this.route.data.subscribe(data => {
       this.user = data.clientDetails;
+      console.log(data.clientDetails);
     });
   }
 
