@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../../services/user.service';
-import { AlertifyService } from '../../services/alertify.service';
-import { User } from '../../models/user';
-import { UserDetailed } from '../../models/user-detailed';
+import { UserService } from '../../../services/user.service';
+import { AlertifyService } from '../../../services/alertify.service';
+import { User } from '../../../models/user';
+import { UserDetailed } from '../../../models/user-detailed';
 
 @Component({
   selector: 'app-clients-list',
