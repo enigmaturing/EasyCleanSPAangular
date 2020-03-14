@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Machine } from '../../../models/machine';
 
 @Component({
   selector: 'app-machine-card',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./machine-card.component.css']
 })
 export class MachineCardComponent implements OnInit {
+
+  @Input() machine: Machine;
 
   constructor() { }
 
