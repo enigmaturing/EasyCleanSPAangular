@@ -15,7 +15,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { ErrorInterceptorProvider } from './services/error.interceptor';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ClientsListComponent } from './components/clients/clients-list/clients-list.component';
-import { MachinesListComponent } from './components/machines-list/machines-list.component';
+import { MachinesListComponent } from './components/machines/machines-list/machines-list.component';
 import { SalesListComponent } from './components/sales-list/sales-list.component';
 import { appRoutes } from './routes';
 import { ClientCardComponent } from './components/clients/client-card/client-card.component';
