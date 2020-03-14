@@ -51,17 +51,17 @@
                         <div class="media mb-3" *ngFor="let machineUsage of user.machineUsages">
                             <img src={{machineUsage.iconUrl}} class="mr-3" alt="...">
                             <div class="media-body">
-                                <h5 class="mt-0">{{machineUsage.date}}</h5>
-                                {{machineUsage.totalAmountPaid}} €
+                                <h5 class="mt-0"><span class="badge badge-primary">Spent: {{machineUsage.totalAmountPaid}} €</span> on {{machineUsage.date}}</h5>
+                                {{machineUsage.quantityOfServicesBooked}} usages of {{machineUsage.durationPerServiceBooked}} minutes (Total time: {{machineUsage.totalDurationInMinutes}} minutes)<br>
+                                Tariff: {{machineUsage.tariffName}} (á {{machineUsage.pricePerServiceBooked}} € each)
                             </div>
                         </div>
                     </tab>
                     <tab heading="Recharges">
                         <div class="media mb-3" *ngFor="let topup of user.topups">
-                            <!-- <img src="..." class="mr-3" alt="..."> -->
                             <div class="media-body">
-                                <h5 class="mt-0">{{topup.dateOfTopup}}</h5>
-                                {{topup.amount}} €
+                                <h5 class="mt-0"><span class="badge badge-success">Recharged: {{topup.amount}} €</span> on {{topup.dateOfTopup}}</h5>
+                                The employee {{topup.nameOfEmployee}} made the charge
                             </div>
                         </div>
                     </tab>
