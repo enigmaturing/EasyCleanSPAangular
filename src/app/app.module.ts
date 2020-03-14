@@ -20,6 +20,7 @@ import { SalesListComponent } from './components/sales-list/sales-list.component
 import { appRoutes } from './routes';
 import { ClientCardComponent } from './components/clients/client-card/client-card.component';
 import { ClientDetailComponent } from './components/clients/client-detail/client-detail.component';
+import { MachineCardComponent } from './components/machines/machine-card/machine-card.component';
 
 export function tokenGetter() {
    return localStorage.getItem('token');
@@ -36,7 +37,8 @@ export function tokenGetter() {
       MachinesListComponent,
       SalesListComponent,
       ClientCardComponent,
-      ClientDetailComponent
+      ClientDetailComponent,
+      MachineCardComponent
    ],
    imports: [
       BrowserModule,
