@@ -3,4 +3,5 @@ export interface Machine {
     labeledAs: number;
     isBloked: boolean;
     groupName: string;
+    iconUrl: string;
 }
