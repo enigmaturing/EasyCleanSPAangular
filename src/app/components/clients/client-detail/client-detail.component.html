@@ -48,11 +48,11 @@
             <div class="tab-panel">
                 <tabset class="member-tabset">
                     <tab heading="Purchases">
-                        <div class="media mb-3" *ngFor="let purchase of user.purchases">
-                            <!-- <img src="..." class="mr-3" alt="..."> -->
+                        <div class="media mb-3" *ngFor="let machineUsage of user.machineUsages">
+                            <img src={{machineUsage.iconUrl}} class="mr-3" alt="...">
                             <div class="media-body">
-                                <h5 class="mt-0">{{purchase.dateOfPurchase}}</h5>
-                                {{purchase.pricePaid}}
+                                <h5 class="mt-0">{{machineUsage.date}}</h5>
+                                {{machineUsage.totalAmountPaid}} €
                             </div>
                         </div>
                     </tab>
