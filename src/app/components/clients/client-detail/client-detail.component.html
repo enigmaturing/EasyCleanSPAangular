@@ -51,9 +51,9 @@
                         <div class="media mb-3" *ngFor="let machineUsage of user.machineUsages">
                             <img src={{machineUsage.iconUrl}} class="mr-3" alt="...">
                             <div class="media-body">
-                                <h5 class="mt-0"><span class="badge badge-primary">Spent: {{machineUsage.totalAmountPaid}} €</span> on {{machineUsage.date}}</h5>
+                                <h5 class="mt-0"><span class="badge badge-primary">Spent: {{machineUsage.totalAmountPaid}} €</span> on {{machineUsage.date}} at machine {{machineUsage.machineLabeledAs}}</h5>
                                 {{machineUsage.quantityOfServicesBooked}} usages of {{machineUsage.durationPerServiceBooked}} minutes (Total time: {{machineUsage.totalDurationInMinutes}} minutes)<br>
-                                Tariff: {{machineUsage.tariffName}} (á {{machineUsage.pricePerServiceBooked}} € each)
+                                Tariff: "{{machineUsage.tariffName}}" (á {{machineUsage.pricePerServiceBooked}} € each)
                             </div>
                         </div>
                     </tab>
