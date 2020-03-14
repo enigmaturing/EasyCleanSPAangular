@@ -1,1 +1,7 @@
-<p>machines-list works!</p>
+<div class="container">
+    <div class="row mt-3">
+        <p *ngFor="let machine of machines">
+            <app-machine-card></app-machine-card>
+        </p>
+    </div>
+</div>
