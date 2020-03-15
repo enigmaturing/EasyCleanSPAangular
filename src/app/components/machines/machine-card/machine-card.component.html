@@ -1,3 +1,10 @@
-<img src="{{machine.iconUrl}}" alt="Image not available">
-<p>Type of machine: {{machine.groupName}}</p>
-<p>Machine number: {{machine.labeledAs}}</p>
+<div class="card m-2 card-width">
+    <div class="card-img-wrapper">
+        <img [src]=machine.iconUrl class="card-img-top" alt="...">
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{machine.groupName}}</h5>
+      <p class="card-text">Machine number: {{machine.labeledAs}}</p>
+      <a href="#" class="btn btn-primary full-width">More info</a>
+    </div>
+  </div>
