@@ -1,7 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Machine } from 'src/app/models/machine';
-import { AlertifyService } from '../../../services/alertify.service';
-import { MachineService } from 'src/app/services/machine.service';
+import { Component, OnInit, Input } from '@angular/core';
+import { MachineGroup } from 'src/app/models/machine-group';
 
 @Component({
   selector: 'app-machines-list',
@@ -10,22 +8,10 @@ import { MachineService } from 'src/app/services/machine.service';
 })
 export class MachinesListComponent implements OnInit {
 
-  machines: Machine[];
+  @Input() machineGroup: MachineGroup;
 
-  constructor(private machineService: MachineService,
-              private alertify: AlertifyService) { }
+  isCollapsed = false;
 
-  loadMachines() {
-    this.machineService.getMachines().subscribe((machines: Machine[]) => {
-      this.machines = machines;
-    }, error => {
-      this.alertify.error(error);
-    });
-  }
-
-  ngOnInit() {
-    this.loadMachines();
-  }
-
+  ngOnInit() {}
 
 }

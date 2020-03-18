@@ -1,7 +1,7 @@
 export interface Machine {
     id: number;
     labeledAs: number;
-    isBloked: boolean;
+    isBlocked: boolean;
     groupName: string;
     iconUrl: string;
 }

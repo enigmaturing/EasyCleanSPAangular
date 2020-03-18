@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { BsDropdownModule, TabsModule } from 'ngx-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { RouterModule } from '@angular/router';
 import { JwtModule } from '@auth0/angular-jwt';
 
@@ -21,6 +22,7 @@ import { appRoutes } from './routes';
 import { ClientCardComponent } from './components/clients/client-card/client-card.component';
 import { ClientDetailComponent } from './components/clients/client-detail/client-detail.component';
 import { MachineCardComponent } from './components/machines/machine-card/machine-card.component';
+import { MachineGroupsListComponent } from './components/machines/machine-groups-list/machine-groups-list.component';
 
 export function tokenGetter() {
    return localStorage.getItem('token');
@@ -38,7 +40,8 @@ export function tokenGetter() {
       SalesListComponent,
       ClientCardComponent,
       ClientDetailComponent,
-      MachineCardComponent
+      MachineCardComponent,
+      MachineGroupsListComponent
    ],
    imports: [
       BrowserModule,
@@ -46,6 +49,7 @@ export function tokenGetter() {
       FormsModule,
       BsDropdownModule.forRoot(),
       BrowserAnimationsModule,
+      CollapseModule.forRoot(),
       RouterModule.forRoot(appRoutes),
       JwtModule.forRoot({
          config: {

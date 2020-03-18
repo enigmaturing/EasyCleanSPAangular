@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { environment } from '../../environments/environment';
-import { Machine } from '../models/machine';
+import { MachineGroup } from '../models/machine-group';
 
 @Injectable({
   providedIn: 'root'
@@ -14,8 +14,8 @@ export class MachineService {
 
   constructor(private http: HttpClient) { }
 
-  getMachines(): Observable<Machine[]> {
-    return this.http.get<Machine[]>(this.baseUrl);
+  getMachineGroups(): Observable<MachineGroup[]> {
+    return this.http.get<MachineGroup[]>(this.baseUrl);
   }
 
   // ToDo: Implement method getMachine(id)

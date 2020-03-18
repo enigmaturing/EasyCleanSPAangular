@@ -9,6 +9,7 @@ import { Machine } from '../../../models/machine';
 export class MachineCardComponent implements OnInit {
 
   @Input() machine: Machine;
+  @Input() iconPath: string;
 
   constructor() { }
 

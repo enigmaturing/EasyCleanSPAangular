@@ -1,7 +1,13 @@
-<div class="container">
-    <div class="row mt-3">
-        <p *ngFor="let machine of machines">
-            <app-machine-card [machine]=machine></app-machine-card>
-        </p>
+<div class="row mt-3">
+    <button type="button" class="btn btn-primary full-width" (click)="isCollapsed = !isCollapsed"
+            [attr.aria-expanded]="!isCollapsed" aria-controls="collapseBasic">
+        {{machineGroup.typeName}}
+    </button>
+    <div id="collapseBasic" [collapse]="isCollapsed" [isAnimated]="true">
+        <app-machine-card *ngFor="let machine of machineGroup.machines"
+                          class="d-inline-block"
+                          [machine]=machine
+                          [iconPath]=machineGroup.iconUrl>
+        </app-machine-card>
     </div>
 </div>
