@@ -1,1 +1,18 @@
-<p>sales-list works!</p>
+<div class="container">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Concept</th>
+            <th scope="col">Total amount paid</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let machineUsage of machineUsages">
+            <th scope="row">{{machineUsage.date}}</th>
+            <td>{{machineUsage.quantityOfServicesBooked}} time Tariff: {{machineUsage.tariffName}} ({{machineUsage.pricePerServiceBooked}} € each)</td>
+            <td>{{machineUsage.totalAmountPaid}} €</td>
+          </tr>
+        </tbody>
+      </table>
+</div>
