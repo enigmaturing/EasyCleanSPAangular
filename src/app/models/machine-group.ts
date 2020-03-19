@@ -4,7 +4,7 @@ import { Tariff } from './tariff';
 export interface MachineGroup {
     id: number;
     machines: Machine[];
-    tariff: Tariff[];
+    tariffs: Tariff[];
     iconUrl: string;
     typeName: string;
 }

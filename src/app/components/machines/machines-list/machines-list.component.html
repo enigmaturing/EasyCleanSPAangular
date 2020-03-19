@@ -3,6 +3,36 @@
             [attr.aria-expanded]="!isCollapsed" aria-controls="collapseBasic">
         {{machineGroup.typeName}}
     </button>
+    <div class="card full-width m-2">
+        <div class="container">
+            <div class="row">
+              <div class="col">
+                <ul class="list-group m-2">
+                    <li class="list-group-item">
+                        Number of machines: {{ machineGroup.machines.length}}
+                    </li>
+                </ul>
+              </div>
+              <div class="col-2">
+                <button type="button" class="btn btn-outline-primary full-width full-height text-wrap" >Create new tariff for this group</button>
+              </div>
+              <div class="col-6">
+                <div class="panel" id="result_panel">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">Available tariffs for this group:</h4>
+                    </div>
+                    <div class="panel-body">
+                        <ul class="list-group">
+                            <li class="list-group-item" *ngFor="let tariff of machineGroup.tariffs">
+                                {{ tariff.name }}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
     <div id="collapseBasic" [collapse]="isCollapsed" [isAnimated]="true">
         <app-machine-card *ngFor="let machine of machineGroup.machines"
                           class="d-inline-block"
