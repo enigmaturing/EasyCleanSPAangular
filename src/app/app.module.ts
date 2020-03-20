@@ -25,6 +25,7 @@ import { ClientDetailComponent } from './components/clients/client-detail/client
 import { MachineCardComponent } from './components/machines/machine-card/machine-card.component';
 import { MachineGroupsListComponent } from './components/machines/machine-groups-list/machine-groups-list.component';
 import { LineChartComponent } from './components/dashboard/line-chart/line-chart.component';
+import { RadarChartComponent } from './components/dashboard/radar-chart/radar-chart.component';
 
 export function tokenGetter() {
    return localStorage.getItem('token');
@@ -44,7 +45,8 @@ export function tokenGetter() {
       ClientDetailComponent,
       MachineCardComponent,
       MachineGroupsListComponent,
-      LineChartComponent
+      LineChartComponent,
+      RadarChartComponent
    ],
    imports: [
       BrowserModule,
