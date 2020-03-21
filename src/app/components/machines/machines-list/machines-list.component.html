@@ -1,7 +1,9 @@
 <div class="row mt-3">
     <button type="button" class="btn btn-primary full-width" (click)="isCollapsed = !isCollapsed"
             [attr.aria-expanded]="!isCollapsed" aria-controls="collapseBasic">
-        {{machineGroup.typeName}}
+        <p>{{machineGroup.typeName}}</p>
+        <p *ngIf="isCollapsed">(Show machines in this group)</p>
+        <p *ngIf="!isCollapsed">(Hide machines in this group)</p>
     </button>
     <div class="card full-width m-2">
         <div class="container">
@@ -13,10 +15,12 @@
                     </li>
                 </ul>
               </div>
-              <div class="col-2">
-                <button type="button" class="btn btn-outline-primary full-width full-height text-wrap" >Create new tariff for this group</button>
-              </div>
-              <div class="col-6">
+            <div class="col-2">
+                <button type="button" class="btn btn-primary full-width full-height text-wrap" (click)="showNewTariff = !showNewTariff">
+                            Create new tariff for this group
+                </button>
+            </div>
+            <div class="col-6">
                 <div class="panel" id="result_panel">
                     <div class="panel-heading">
                         <h4 class="panel-title">Available tariffs for this group:</h4>
@@ -33,6 +37,7 @@
             </div>
         </div>
     </div>
+    <app-machine-tariff-editor [machineGroup]=machineGroup class="full-width ml-2 mr-2" *ngIf="showNewTariff"></app-machine-tariff-editor>
     <div id="collapseBasic" [collapse]="isCollapsed" [isAnimated]="true">
         <app-machine-card *ngFor="let machine of machineGroup.machines"
                           class="d-inline-block"

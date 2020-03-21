@@ -11,6 +11,7 @@ export class MachinesListComponent implements OnInit {
   @Input() machineGroup: MachineGroup;
 
   isCollapsed = false;
+  showNewTariff = false;
 
   ngOnInit() {}
 
