@@ -2,7 +2,7 @@ export interface Tariff {
     id: number;
     name: string;
     price: number;
-    durationInMinutes: string;
+    durationInMinutes: number;
     isActive: boolean;
     machineId: number;
 }
