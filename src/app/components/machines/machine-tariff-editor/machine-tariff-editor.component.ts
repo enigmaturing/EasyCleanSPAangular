@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MachineGroup } from 'src/app/models/machine-group';
+import { AlertifyService } from '../../../services/alertify.service';
 
 
 @Component({
@@ -15,14 +16,19 @@ export class MachineTariffEditorComponent implements OnInit {
   @Input() machineGroup: MachineGroup;
   @Output() closeFormNewTariff = new EventEmitter();
 
-  constructor() { }
+  constructor(private alertify: AlertifyService) { }
 
   ngOnInit() {
   }
 
+  hideTariffForm() {
+    this.closeFormNewTariff.emit(false);
+  }
+
   createNewTariff() {
     console.log(this.newTariff);
-    this.closeFormNewTariff.emit(false);
+    this.hideTariffForm();
+    this.alertify.success('New tariff successfully created!');
   }
 
 }

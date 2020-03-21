@@ -6,4 +6,5 @@
     <input class="form-control mr-sm-2" type="number" placeholder="Duration in minutes" name="Duration" required [(ngModel)]="newTariff.duration">
     <input class="form-control mr-sm-2" type="number" placeholder="Price" name="Price" required [(ngModel)]="newTariff.price">
     <button [disabled]="!newTariffForm.valid" class="btn btn-success" type="submit">Create new tariff</button>
+    <button class="btn btn-danger ml-2" (click)="hideTariffForm()">Cancel</button>
 </form>
