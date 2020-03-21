@@ -13,6 +13,10 @@ export class MachinesListComponent implements OnInit {
   isCollapsed = false;
   showNewTariff = false;
 
+  closeFormNewTariff(showForm: boolean) {
+    this.showNewTariff = showForm;
+  }
+
   ngOnInit() {}
 
 }

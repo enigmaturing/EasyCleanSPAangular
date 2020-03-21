@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MachineGroup } from 'src/app/models/machine-group';
 
@@ -13,6 +13,7 @@ export class MachineTariffEditorComponent implements OnInit {
   newTariff: any = {};
 
   @Input() machineGroup: MachineGroup;
+  @Output() closeFormNewTariff = new EventEmitter();
 
   constructor() { }
 
@@ -21,6 +22,7 @@ export class MachineTariffEditorComponent implements OnInit {
 
   createNewTariff() {
     console.log(this.newTariff);
+    this.closeFormNewTariff.emit(false);
   }
 
 }
