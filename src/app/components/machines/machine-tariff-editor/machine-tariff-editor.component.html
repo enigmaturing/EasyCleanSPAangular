@@ -2,8 +2,8 @@
     <strong>Information: </strong>You have made changes in the new tariff. Any unsaved changes will be lost!
 </div>
 <form #newTariffForm="ngForm" class="form-inline" (ngSubmit)="createNewTariff()">
-    <input class="form-control mr-sm-2" type="text" placeholder="Tariff name" name="TariffName" required [(ngModel)]="newTariff.tariffName">
-    <input class="form-control mr-sm-2" type="number" placeholder="Duration in minutes" name="Duration" required [(ngModel)]="newTariff.duration">
+    <input class="form-control mr-sm-2" type="text" placeholder="Tariff name" name="TariffName" required [(ngModel)]="newTariff.name">
+    <input class="form-control mr-sm-2" type="number" placeholder="Duration in minutes" name="Duration" required [(ngModel)]="newTariff.durationInMinutes">
     <input class="form-control mr-sm-2" type="number" placeholder="Price" name="Price" required [(ngModel)]="newTariff.price">
     <button [disabled]="!newTariffForm.valid" class="btn btn-success" type="submit">Create new tariff</button>
     <button class="btn btn-danger ml-2" (click)="hideTariffForm()">Cancel</button>
