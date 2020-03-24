@@ -18,7 +18,7 @@ export class MachineGroupsListComponent implements OnInit {
   loadMachineGroups() {
     this.machineService.getMachineGroups().subscribe((machineGroups: MachineGroup[]) => {
       this.machineGroups = machineGroups;
-      console.log(this.machineGroups);
+      // console.log(this.machineGroups);
     }, error => {
       this.alertify.error(error);
     });
