@@ -4,7 +4,7 @@ import { catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
 
 @Injectable()
-class ErrorInterceptor implements HttpInterceptor {
+export class ErrorInterceptor implements HttpInterceptor {
   intercept(
     req: import('@angular/common/http').HttpRequest<any>,
     next: import('@angular/common/http').HttpHandler
