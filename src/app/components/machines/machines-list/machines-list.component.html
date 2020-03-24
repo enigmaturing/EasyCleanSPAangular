@@ -37,7 +37,7 @@
             </div>
         </div>
     </div>
-    <app-machine-tariff-editor [machineGroup]=machineGroup class="full-width ml-2 mr-2" *ngIf="showNewTariff" (closeFormNewTariff)="closeFormNewTariff($event)"></app-machine-tariff-editor>
+    <app-machine-tariff-editor [machineGroup]=machineGroup class="full-width ml-2 mr-2" *ngIf="showNewTariff" (submitFormNewTariff)="refreshTariffs($event)" (closeFormNewTariff)="closeFormNewTariff($event)"></app-machine-tariff-editor>
     <div id="collapseBasic" [collapse]="isCollapsed" [isAnimated]="true">
         <app-machine-card *ngFor="let machine of machineGroup.machines"
                           class="d-inline-block"

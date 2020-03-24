@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { MachineGroup } from 'src/app/models/machine-group';
+import { Tariff } from 'src/app/models/tariff';
 
 @Component({
   selector: 'app-machines-list',
@@ -15,6 +16,11 @@ export class MachinesListComponent implements OnInit {
 
   closeFormNewTariff(showForm: boolean) {
     this.showNewTariff = showForm;
+  }
+
+  refreshTariffs(tariffs: Tariff[]) {
+    this.machineGroup.tariffs = tariffs;
+    this.showNewTariff = false;
   }
 
   ngOnInit() {}

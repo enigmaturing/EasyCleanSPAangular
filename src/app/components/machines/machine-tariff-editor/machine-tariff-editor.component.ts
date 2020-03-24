@@ -18,6 +18,7 @@ export class MachineTariffEditorComponent implements OnInit {
 
   @Input() machineGroup: MachineGroup;
   @Output() closeFormNewTariff = new EventEmitter();
+  @Output() submitFormNewTariff = new EventEmitter();
 
   constructor(private alertify: AlertifyService,
               private tariffService: TariffService) { }
@@ -30,16 +31,26 @@ export class MachineTariffEditorComponent implements OnInit {
   }
 
   createNewTariff() {
+    // The user does not give the machine group id in the formular, therefore
+    // we must supply it in the next line
     this.newTariff.machineGroupId = this.machineGroup.id;
     this.newTariff.isActive = true;
-    // console.log(this.newTariff);
     this.tariffService.storeTariffInDb(this.newTariff).subscribe(next => {
-      this.hideTariffForm();
+      this.refreshAvailableTariffs();
       this.alertify.success('New tariff successfully created!');
     }, error => {
       this.alertify.error(error);
     });
+  }
 
+  // This method is triggered from the method createNewTariff() the user submits
+  // Its porpouse is to refresh the list of available tariffs after adding a new one
+  refreshAvailableTariffs() {
+    this.tariffService.getTariffsOfMachineGroup(this.machineGroup.id).subscribe((tariffs: Tariff[]) => {
+      this.submitFormNewTariff.emit(tariffs);
+    }, error => {
+      this.alertify.error(error);
+    });
   }
 
 }
