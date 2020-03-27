@@ -27,6 +27,7 @@ import { MachineGroupsListComponent } from './components/machines/machine-groups
 import { LineChartComponent } from './components/dashboard/line-chart/line-chart.component';
 import { RadarChartComponent } from './components/dashboard/radar-chart/radar-chart.component';
 import { MachineTariffEditorComponent } from './components/machines/machine-tariff-editor/machine-tariff-editor.component';
+import { AdminPanelComponent } from './components/admin/admin-panel/admin-panel.component';
 
 export function tokenGetter() {
    return localStorage.getItem('token');
@@ -48,7 +49,8 @@ export function tokenGetter() {
       MachineGroupsListComponent,
       LineChartComponent,
       RadarChartComponent,
-      MachineTariffEditorComponent
+      MachineTariffEditorComponent,
+      AdminPanelComponent
    ],
    imports: [
       BrowserModule,
