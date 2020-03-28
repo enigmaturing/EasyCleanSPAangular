@@ -28,6 +28,7 @@ import { LineChartComponent } from './components/dashboard/line-chart/line-chart
 import { RadarChartComponent } from './components/dashboard/radar-chart/radar-chart.component';
 import { MachineTariffEditorComponent } from './components/machines/machine-tariff-editor/machine-tariff-editor.component';
 import { AdminPanelComponent } from './components/admin/admin-panel/admin-panel.component';
+import { HasRoleDirective } from './directives/has-role.directive';
 
 export function tokenGetter() {
    return localStorage.getItem('token');
@@ -50,7 +51,8 @@ export function tokenGetter() {
       LineChartComponent,
       RadarChartComponent,
       MachineTariffEditorComponent,
-      AdminPanelComponent
+      AdminPanelComponent,
+      HasRoleDirective
    ],
    imports: [
       BrowserModule,

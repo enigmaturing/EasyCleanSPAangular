@@ -1,23 +1,23 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-primary">
   <a class="navbar-brand" [routerLink]="['/home']">EasyClean</a>
 
-  <ul class="navbar-nav mr-auto">
-    <li class="nav-item" *ngIf="loggedIn()" routerLinkActive="active">
-      <a class="nav-link" [routerLink]="['/dashboard']">Dashboard</a>
-    </li>
-    <li class="nav-item" *ngIf="loggedIn()" routerLinkActive="active">
-      <a class="nav-link" [routerLink]="['/sales']">Ventas</a>
-    </li>
-    <li class="nav-item" *ngIf="loggedIn()" routerLinkActive="active">
-      <a class="nav-link" [routerLink]="['/clients']">Clientes</a>
-    </li>
-    <li class="nav-item" *ngIf="loggedIn()" routerLinkActive="active">
-      <a class="nav-link" [routerLink]="['/machines']">Máquinas</a>
-    </li>
-    <li class="nav-item" *ngIf="loggedIn()" routerLinkActive="active">
-      <a class="nav-link" [routerLink]="['/admin']">Admin</a>
-    </li>
-  </ul>
+    <ul class="navbar-nav mr-auto" *ngIf="loggedIn()">
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['/dashboard']">Dashboard</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['/sales']">Ventas</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['/clients']">Clientes</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['/machines']">Máquinas</a>
+      </li>
+      <li *appHasRole="['BusinessOwner']" class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['/admin']">Admin</a>
+      </li>
+    </ul>
 
   <form #loginForm="ngForm" class="form-inline my-2 my-lg-0" (ngSubmit)="login()" *ngIf="!loggedIn()">
     <input class="form-control mr-sm-2" type="email" placeholder="Email" name="email" required [(ngModel)]="model.email">
