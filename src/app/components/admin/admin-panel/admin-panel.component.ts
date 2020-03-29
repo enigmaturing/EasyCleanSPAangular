@@ -7,7 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminPanelComponent implements OnInit {
 
+  registerVisible = false;
+
   constructor() { }
+
+  registerToggle()
+  {
+    this.registerVisible = !this.registerVisible;
+  }
 
   ngOnInit() {
   }

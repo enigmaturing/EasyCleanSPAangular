@@ -1,13 +1,13 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { AuthService } from '../../services/auth.service';
-import { AlertifyService } from '../../services/alertify.service';
+import { AuthService } from 'src/app/services/auth.service';
+import { AlertifyService } from 'src/app/services/alertify.service';
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  selector: 'app-employee-register',
+  templateUrl: './employee-register.component.html',
+  styleUrls: ['./employee-register.component.css']
 })
-export class RegisterComponent implements OnInit {
+export class EmployeeRegisterComponent implements OnInit {
 
   @Output() cancelRegister = new EventEmitter();
 

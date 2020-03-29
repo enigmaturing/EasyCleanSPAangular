@@ -13,7 +13,6 @@ import { AppComponent } from './app.component';
 import { NavComponent } from './components/nav/nav.component';
 import { AuthService } from './services/auth.service';
 import { HomeComponent } from './components/home/home.component';
-import { RegisterComponent } from './components/register/register.component';
 import { ErrorInterceptorProvider } from './services/error.interceptor';
 import { DashboardComponent } from './components/dashboard/dashboard/dashboard.component';
 import { ClientsListComponent } from './components/clients/clients-list/clients-list.component';
@@ -30,6 +29,7 @@ import { MachineTariffEditorComponent } from './components/machines/machine-tari
 import { AdminPanelComponent } from './components/admin/admin-panel/admin-panel.component';
 import { HasRoleDirective } from './directives/has-role.directive';
 import { EmployeeRolesEditComponent } from './components/admin/employee-roles-edit/employee-roles-edit.component';
+import { EmployeeRegisterComponent } from './components/admin/employee-register/employee-register.component';
 
 export function tokenGetter() {
    return localStorage.getItem('token');
@@ -40,7 +40,6 @@ export function tokenGetter() {
       AppComponent,
       NavComponent,
       HomeComponent,
-      RegisterComponent,
       DashboardComponent,
       ClientsListComponent,
       MachinesListComponent,
@@ -54,7 +53,8 @@ export function tokenGetter() {
       MachineTariffEditorComponent,
       AdminPanelComponent,
       HasRoleDirective,
-      EmployeeRolesEditComponent
+      EmployeeRolesEditComponent,
+      EmployeeRegisterComponent
    ],
    imports: [
       BrowserModule,
