@@ -11,4 +11,5 @@ export interface User {
     age?: number;
     city?: string;
     country?: string;
+    roles?: string[];
 }
