@@ -29,6 +29,7 @@ import { RadarChartComponent } from './components/dashboard/radar-chart/radar-ch
 import { MachineTariffEditorComponent } from './components/machines/machine-tariff-editor/machine-tariff-editor.component';
 import { AdminPanelComponent } from './components/admin/admin-panel/admin-panel.component';
 import { HasRoleDirective } from './directives/has-role.directive';
+import { EmployeeRolesEditComponent } from './components/admin/employee-roles-edit/employee-roles-edit.component';
 
 export function tokenGetter() {
    return localStorage.getItem('token');
@@ -52,7 +53,8 @@ export function tokenGetter() {
       RadarChartComponent,
       MachineTariffEditorComponent,
       AdminPanelComponent,
-      HasRoleDirective
+      HasRoleDirective,
+      EmployeeRolesEditComponent
    ],
    imports: [
       BrowserModule,
