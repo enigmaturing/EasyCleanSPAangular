@@ -16,6 +16,6 @@ export const appRoutes: Routes = [
     { path: 'clients', component: ClientsListComponent, canActivate: [AuthGuard]},
     { path: 'clients/:id', component: ClientDetailComponent, canActivate: [AuthGuard], resolve: {clientDetails: ClientDetailResolver}},
     { path: 'machines', component: MachineGroupsListComponent, canActivate: [AuthGuard]},
-    { path: 'admin', component: AdminPanelComponent, data: {roles: ['BusinessOwner', 'BackOfficeEmployee']}, canActivate: [AuthGuard]},
+    { path: 'admin', component: AdminPanelComponent, data: {roles: ['Admin', 'BackOfficeEmployee']}, canActivate: [AuthGuard]},
     { path: '**', redirectTo: '', pathMatch: 'full'},
 ];

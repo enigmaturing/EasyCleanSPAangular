@@ -18,7 +18,7 @@ export class HasRoleDirective implements OnInit {
   // estamos aplicando esta directiva (ver que en nav.component.html)
   // le aplicamos esta directiva al elemento de la lista ordenada
   // presente en el nav que nos lleva al admin panel:
-  // <li *appHasRole="['BusinessOwner']" class="nav-item" routerLinkActive="active">
+  // <li *appHasRole="['Admin']" class="nav-item" routerLinkActive="active">
   constructor(private viewContainerRef: ViewContainerRef,
               private templateRef: TemplateRef<any>,
               private authService: AuthService) { }

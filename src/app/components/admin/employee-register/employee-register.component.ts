@@ -13,7 +13,7 @@ export class EmployeeRegisterComponent implements OnInit {
   @Output() employeeCreated = new EventEmitter();
 
   model: any = {};
-
+  
   constructor(private authService: AuthService,
               private alertify: AlertifyService) { }
 
