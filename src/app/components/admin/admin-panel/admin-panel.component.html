@@ -1,5 +1,5 @@
 <div class="container">
     <button class="btn btn-primary w-100 mt-2 mb-2" (click)="registerToggle()">Register a new employee</button>
-    <app-employee-register *ngIf="registerVisible" (cancelRegister)="registerToggle()"></app-employee-register>
+    <app-employee-register *ngIf="registerVisible" (cancelRegister)="registerToggle()" (employeeCreated)="getUsersWithRoles()"></app-employee-register>
     <app-employees-table [users]="users"></app-employees-table>
 </div>

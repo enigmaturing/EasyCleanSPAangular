@@ -10,6 +10,7 @@ import { AlertifyService } from 'src/app/services/alertify.service';
 export class EmployeeRegisterComponent implements OnInit {
 
   @Output() cancelRegister = new EventEmitter();
+  @Output() employeeCreated = new EventEmitter();
 
   model: any = {};
 
@@ -21,6 +22,7 @@ export class EmployeeRegisterComponent implements OnInit {
 
   register() {
     this.authService.register(this.model).subscribe(next => {
+      this.employeeCreated.emit();
       this.alertify.message('user was sucessfully registered!');
     }, error => {
       this.alertify.error(error);
