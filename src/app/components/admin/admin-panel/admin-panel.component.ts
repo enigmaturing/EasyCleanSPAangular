@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/models/user';
+import { AdminService } from 'src/app/services/admin.service';
 
 @Component({
   selector: 'app-admin-panel',
@@ -8,15 +10,25 @@ import { Component, OnInit } from '@angular/core';
 export class AdminPanelComponent implements OnInit {
 
   registerVisible = false;
+  users: User[];
 
-  constructor() { }
+  constructor(private adminService: AdminService) { }
 
-  registerToggle()
-  {
+  getUsersWithRoles() {
+    this.adminService.getUsersWithRoles().subscribe((users: User[]) => {
+      this.users = users;
+      console.log(this.users);
+    }, error => {
+      console.log(error);
+    });
+  }
+
+  registerToggle() {
     this.registerVisible = !this.registerVisible;
   }
 
   ngOnInit() {
+    this.getUsersWithRoles();
   }
 
 }

@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { User } from 'src/app/models/user';
-import { AdminService } from 'src/app/services/admin.service';
 
 @Component({
   selector: 'app-employees-table',
@@ -9,21 +8,10 @@ import { AdminService } from 'src/app/services/admin.service';
 })
 export class EmployeesTableComponent implements OnInit {
 
-  users: User[];
+  @Input() users: User[];
 
-  constructor(private adminService: AdminService) { }
+  constructor() {}
 
-  ngOnInit() {
-    this.getUsersWithRoles();
-  }
-
-  getUsersWithRoles() {
-    this.adminService.getUsersWithRoles().subscribe((users: User[]) => {
-      this.users = users;
-      console.log(this.users);
-    }, error => {
-      console.log(error);
-    });
-  }
+  ngOnInit() {}
 
 }
