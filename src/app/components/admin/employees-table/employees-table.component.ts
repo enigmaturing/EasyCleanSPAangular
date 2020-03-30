@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../../../models/user';
+import { User } from 'src/app/models/user';
 import { AdminService } from 'src/app/services/admin.service';
 
 @Component({
-  selector: 'app-employee-roles-edit',
-  templateUrl: './employee-roles-edit.component.html',
-  styleUrls: ['./employee-roles-edit.component.css']
+  selector: 'app-employees-table',
+  templateUrl: './employees-table.component.html',
+  styleUrls: ['./employees-table.component.css']
 })
-export class EmployeeRolesEditComponent implements OnInit {
+export class EmployeesTableComponent implements OnInit {
 
   users: User[];
 
