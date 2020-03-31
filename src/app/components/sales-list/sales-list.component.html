@@ -9,7 +9,7 @@
         </thead>
         <tbody>
           <tr *ngFor="let machineUsage of machineUsages">
-            <th scope="row">{{machineUsage.date}}</th>
+            <th scope="row">{{machineUsage.date | date:'dd.MM.yyyy (HH:mm)'}}</th>
             <td>{{machineUsage.quantityOfServicesBooked}} time Tariff: {{machineUsage.tariffName}} ({{machineUsage.pricePerServiceBooked}} € each)</td>
             <td>{{machineUsage.totalAmountPaid}} €</td>
           </tr>

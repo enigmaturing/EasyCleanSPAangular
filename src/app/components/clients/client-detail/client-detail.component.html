@@ -15,7 +15,7 @@
                         </div>
                         <div>
                             <strong>Birthdate:</strong>
-                            <p>{{user.dateOfBirth}}</p>
+                            <p>{{user.dateOfBirth | date:'dd.MM.yyyy'}}</p>
                         </div>
                         <div>
                             <strong>Email:</strong>
@@ -23,11 +23,11 @@
                         </div>
                         <div>
                             <strong>Member since:</strong>
-                            <p>{{user.created}}</p>
+                            <p>{{user.created | date:'dd.MM.yyyy'}}</p>
                         </div>
                         <div>
                             <strong>Last active:</strong>
-                            <p>{{user.lastActive}}</p>
+                            <p>{{user.lastActive | date:'dd.MM.yyyy (HH:mm)'}}</p>
                         </div>
                         <div>
                             <strong>Remaining credit:</strong>
@@ -51,7 +51,7 @@
                         <div class="media mb-3" *ngFor="let machineUsage of user.machineUsages">
                             <img src={{machineUsage.iconUrl}} class="mr-3" alt="...">
                             <div class="media-body">
-                                <h5 class="mt-0"><span class="badge badge-primary">Spent: {{machineUsage.totalAmountPaid}} €</span> on {{machineUsage.date}} at machine {{machineUsage.machineLabeledAs}}</h5>
+                                <h5 class="mt-0"><span class="badge badge-primary">Spent: {{machineUsage.totalAmountPaid}} €</span> on {{machineUsage.date | date:'dd.MM.yyyy (HH:mm)'}} at machine {{machineUsage.machineLabeledAs}}</h5>
                                 {{machineUsage.quantityOfServicesBooked}} usages of {{machineUsage.durationPerServiceBooked}} minutes (Total time: {{machineUsage.totalDurationInMinutes}} minutes)<br>
                                 Tariff: "{{machineUsage.tariffName}}" (á {{machineUsage.pricePerServiceBooked}} € each)
                             </div>
@@ -60,7 +60,7 @@
                     <tab heading="Recharges">
                         <div class="media mb-3" *ngFor="let topup of user.topups">
                             <div class="media-body">
-                                <h5 class="mt-0"><span class="badge badge-success">Recharged: {{topup.amount}} €</span> on {{topup.dateOfTopup}}</h5>
+                                <h5 class="mt-0"><span class="badge badge-success">Recharged: {{topup.amount}} €</span> on {{topup.dateOfTopup | date:'dd.MM.yyyy (HH:mm)'}}</h5>
                                 The employee {{topup.nameOfEmployee}} made the charge
                             </div>
                         </div>
