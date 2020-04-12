@@ -17,7 +17,7 @@ export class ClientsListComponent implements OnInit {
               private alertify: AlertifyService) { }
 
   loadUsers() {
-    this.userService.getUsers().subscribe((users: User[]) => {
+    this.userService.getClients().subscribe((users: User[]) => {
       this.users = users;
     }, error => {
       this.alertify.error(error);
