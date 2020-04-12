@@ -58,6 +58,10 @@
                         </div>
                     </tab>
                     <tab heading="Recharges">
+                        <form #topUpForm="ngForm" class="form-inline" (ngSubmit)="topupAccount()">
+                            <input class="form-control mr-sm-2" type="number" placeholder="Amount" name="Amount" required [(ngModel)]="topup.amount">
+                            <button [disabled]="!topUpForm.valid" class="btn btn-success" type="submit">Charge amount to the client's account</button>
+                        </form>
                         <div class="media mb-3" *ngFor="let topup of user.topups">
                             <div class="media-body">
                                 <h5 class="mt-0"><span class="badge badge-success">Recharged: {{topup.amount}} €</span> on {{topup.dateOfTopup | date:'dd.MM.yyyy (HH:mm)'}}</h5>

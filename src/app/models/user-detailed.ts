@@ -1,4 +1,4 @@
-import { Topup } from './topup';
+import { TopupDetailed } from './topup-detailed';
 import { MachineUsage } from './machine-usage';
 
 export interface UserDetailed {
@@ -17,5 +17,5 @@ export interface UserDetailed {
     photoUrl: string;
     remainingCredit: number;
     machineUsages: MachineUsage[];
-    topups: Topup[];
+    topups: TopupDetailed[];
 }
