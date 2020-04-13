@@ -5,6 +5,10 @@ import { AlertifyService } from 'src/app/services/alertify.service';
 import { Topup } from '../../../models/topup';
 import { SalesService } from 'src/app/services/sales.service';
 import { AuthService } from 'src/app/services/auth.service';
+import { TabHeadingDirective } from 'ngx-bootstrap';
+import { TopupDetailed } from '../../../models/topup-detailed';
+import { MachineUsage } from '../../../models/machine-usage';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-client-detail',
@@ -19,6 +23,7 @@ export class ClientDetailComponent implements OnInit {
   constructor(private route: ActivatedRoute,
               private alertify: AlertifyService,
               private salesService: SalesService,
+              private userService: UserService,
               private authService: AuthService) { }
 
   ngOnInit() {
@@ -31,12 +36,20 @@ export class ClientDetailComponent implements OnInit {
     });
   }
 
+  refreshUser(clientId: number) {
+    this.userService.getUser(clientId).subscribe((user: UserDetailed) => {
+      this.user = user;
+      console.log(user);
+    }, error => {
+      this.alertify.error(error);
+    });
+  }
+
   topupAccount() {
     this.topup.userId = this.user.id;
     this.topup.employeeId = Number(this.authService.decodedToken.nameid);
-    console.log(this.topup);
     this.salesService.topupClientAccount(this.topup).subscribe(next => {
-      this.loadUser();
+      this.refreshUser(this.user.id);
       this.alertify.success('The remaining amount of the user was sucessfully updated!');
     }, error => {
       this.alertify.error(error);
