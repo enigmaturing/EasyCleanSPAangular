@@ -15,7 +15,7 @@ export class SalesService {
   constructor(private http: HttpClient) { }
 
   getMachineUsages(): Observable<MachineUsage[]> {
-    return this.http.get<MachineUsage[]>(this.baseUrl);
+    return this.http.get<MachineUsage[]>(this.baseUrl + 'machineUsages');
   }
 
   topupClientAccount(topup: Topup) {

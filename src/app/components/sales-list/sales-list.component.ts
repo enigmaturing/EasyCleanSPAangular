@@ -18,7 +18,6 @@ export class SalesListComponent implements OnInit {
   loadMachineUsages() {
     this.salesService.getMachineUsages().subscribe((machineUsages: MachineUsage[]) => {
       this.machineUsages = machineUsages;
-      // console.log(this.machineUsages);
     }, error => {
       this.alertify.error(error);
     });
