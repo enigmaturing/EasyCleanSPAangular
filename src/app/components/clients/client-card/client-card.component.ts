@@ -9,10 +9,12 @@ import { User } from '../../../models/user';
 export class ClientCardComponent implements OnInit {
 
   @Input() user: User;
+  remainingCreditRounded: number;
 
   constructor() { }
 
   ngOnInit() {
+    this.remainingCreditRounded = Math.round((this.user.remainingCredit + 0.00001) * 100) / 100;
   }
 
 }

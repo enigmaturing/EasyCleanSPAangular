@@ -8,7 +8,7 @@
   </div>
     <div class="card-body">
       <h5 class="card-title title-height">{{ user.name }} {{ user.surname}}</h5>
-      <p class="card-text">{{ user.remainingCredit }}€</p>
+      <p class="card-text">{{ remainingCreditRounded }}€</p>
       <a [routerLink]="['/clients/', user.id]" class="btn btn-primary full-width">Show details</a>
     </div>
   </div>
