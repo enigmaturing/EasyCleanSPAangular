@@ -49,11 +49,13 @@
                 <tabset class="member-tabset">
                     <tab heading="Purchases">
                         <div class="media mb-3" *ngFor="let machineUsage of user.machineUsages">
-                            <img src={{machineUsage.iconUrl}} class="mr-3" alt="...">
+                            <img src={{machineUsage.iconUrl}} class="mr-3 mt-4" alt="...">
                             <div class="media-body">
                                 <h5 class="mt-0"><span class="badge badge-primary">Spent: {{machineUsage.totalAmountPaid}} €</span> on {{machineUsage.date | date:'dd.MM.yyyy (HH:mm)'}} at machine {{machineUsage.machineLabeledAs}}</h5>
-                                {{machineUsage.quantityOfServicesBooked}} usages of {{machineUsage.durationPerServiceBooked}} minutes (Total time: {{machineUsage.totalDurationInMinutes}} minutes)<br>
-                                Tariff: "{{machineUsage.tariffName}}" (á {{machineUsage.pricePerServiceBooked}} € each)
+                                Tariff: "{{machineUsage.tariffName}}".<br>
+                                {{machineUsage.quantityOfServicesBooked}} usages of {{machineUsage.pricePerServiceBooked}} € each.<br>
+                                Total usage time: {{machineUsage.totalDurationInMinutes}} minutes.<br>
+                                {{machineUsage.durationPerServiceBooked}} minutes each usage.
                             </div>
                         </div>
                     </tab>
