@@ -21,7 +21,7 @@ export class EmployeeRegisterComponent implements OnInit {
   }
 
   register() {
-    this.authService.register(this.model).subscribe(next => {
+    this.authService.registerEmployee(this.model).subscribe(next => {
       this.employeeCreated.emit();
       this.alertify.message('user was sucessfully registered!');
     }, error => {

@@ -32,8 +32,8 @@ export class AuthService {
     );
   }
 
-  register(model: any) {
-    return this.http.post(this.baseUrl + 'register', model);
+  registerEmployee(model: any) {
+    return this.http.post(this.baseUrl + 'register/employee', model);
   }
 
   // Reads from the JWT-Token the roles the logged in user belongs to
