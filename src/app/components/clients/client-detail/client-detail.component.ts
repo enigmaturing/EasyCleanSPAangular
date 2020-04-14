@@ -19,6 +19,7 @@ export class ClientDetailComponent implements OnInit {
 
   user: UserDetailed;
   topup = {} as Topup;
+  remainingCreditRounded: number;
 
   constructor(private route: ActivatedRoute,
               private alertify: AlertifyService,
@@ -28,6 +29,7 @@ export class ClientDetailComponent implements OnInit {
 
   ngOnInit() {
     this.loadUser();
+    this.remainingCreditRounded = Math.round((this.user.remainingCredit + 0.00001) * 100) / 100;
   }
 
   loadUser() {
