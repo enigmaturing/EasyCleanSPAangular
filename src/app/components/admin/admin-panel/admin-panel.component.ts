@@ -17,7 +17,6 @@ export class AdminPanelComponent implements OnInit {
   getUsersWithRoles() {
     this.adminService.getUsersWithRoles().subscribe((users: User[]) => {
       this.users = users;
-      console.log(this.users);
     }, error => {
       console.log(error);
     });
