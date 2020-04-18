@@ -14,7 +14,18 @@ export class NavComponent implements OnInit {
               private alertify: AlertifyService,
               private router: Router) { }
 
+  model: any = {};
+
   ngOnInit() {
+  }
+
+  login() {
+    this.authService.login(this.model).subscribe(next => {
+      this.alertify.success('logged in successfully');
+      this.router.navigate(['/dashboard']);
+    }, error => {
+      this.alertify.error(error);
+    });
   }
 
   loggedIn() {
@@ -23,8 +34,10 @@ export class NavComponent implements OnInit {
 
   logout() {
     localStorage.removeItem('token');
+    this.model.email = '';
+    this.model.password = '';
     this.alertify.message('sucessfully logged out');
-    this.router.navigate(['/login']);
+    this.router.navigate(['/home']);
   }
 
 }
