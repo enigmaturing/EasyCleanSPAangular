@@ -8,9 +8,11 @@ import { ClientDetailComponent } from './components/clients/client-detail/client
 import { ClientDetailResolver } from './resolvers/client-detail.resolver';
 import { MachineGroupsListComponent } from './components/machines/machine-groups-list/machine-groups-list.component';
 import { AdminPanelComponent } from './components/admin/admin-panel/admin-panel.component';
+import { LoginComponent } from './components/auth/login/login.component';
 
 export const appRoutes: Routes = [
-    { path: '', component: HomeComponent},
+    { path: '', component: LoginComponent},
+    { path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
     { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
     { path: 'sales', component: SalesListComponent, canActivate: [AuthGuard]},
     { path: 'clients', component: ClientsListComponent, canActivate: [AuthGuard]},

@@ -30,6 +30,8 @@ import { AdminPanelComponent } from './components/admin/admin-panel/admin-panel.
 import { HasRoleDirective } from './directives/has-role.directive';
 import { EmployeeRegisterComponent } from './components/admin/employee-register/employee-register.component';
 import { EmployeesTableComponent } from './components/admin/employees-table/employees-table.component';
+import { LoginComponent } from './components/auth/login/login.component';
+import { PasswordResetComponent } from './components/auth/password-reset/password-reset.component';
 
 export function tokenGetter() {
    return localStorage.getItem('token');
@@ -54,7 +56,9 @@ export function tokenGetter() {
       AdminPanelComponent,
       HasRoleDirective,
       EmployeeRegisterComponent,
-      EmployeesTableComponent
+      EmployeesTableComponent,
+      LoginComponent,
+      PasswordResetComponent
    ],
    imports: [
       BrowserModule,
