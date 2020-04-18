@@ -19,25 +19,12 @@ export class NavComponent implements OnInit {
   ngOnInit() {
   }
 
-  login() {
-    this.authService.login(this.model).subscribe(next => {
-      this.alertify.success('logged in successfully');
-      this.router.navigate(['/dashboard']);
-    }, error => {
-      this.alertify.error(error);
-    });
-  }
-
-  loggedIn() {
-    return this.authService.loggedIn();
-  }
-
   logout() {
     localStorage.removeItem('token');
     this.model.email = '';
     this.model.password = '';
     this.alertify.message('sucessfully logged out');
-    this.router.navigate(['/home']);
+    this.router.navigate(['/login']);
   }
 
 }
