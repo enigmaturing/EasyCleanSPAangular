@@ -17,6 +17,7 @@
     background-repeat: repeat-x;
     position: absolute;
     opacity: 50%;
+    pointer-events: none;
   }
 
   .wave1 {
