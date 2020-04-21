@@ -8,6 +8,8 @@ import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { RouterModule } from '@angular/router';
 import { JwtModule } from '@auth0/angular-jwt';
 import { ChartsModule } from 'ng2-charts';
+import { LottieModule } from 'ngx-lottie';
+import player from 'lottie-web';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './components/nav/nav.component';
@@ -35,6 +37,10 @@ import { PasswordResetComponent } from './components/auth/password-reset/passwor
 
 export function tokenGetter() {
    return localStorage.getItem('token');
+}
+
+export function playerFactory() {
+   return player;
 }
 
 @NgModule({
@@ -76,7 +82,8 @@ export function tokenGetter() {
          }
       }),
       TabsModule.forRoot(),
-      ChartsModule
+      ChartsModule,
+      LottieModule.forRoot({ player: playerFactory })
    ],
    providers: [
       AuthService,
