@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../../services/auth.service';
 import { AlertifyService } from '../../../services/alertify.service';
 import { Router } from '@angular/router';
-import { AnimationOptions } from 'ngx-lottie';
-import { AnimationItem } from 'lottie-web';
 
 @Component({
   selector: 'app-login',
@@ -17,11 +15,6 @@ export class LoginComponent implements OnInit {
               private router: Router) { }
 
     model: any = {};
-    options: AnimationOptions = {
-      path: '/assets/lottie_files/laundry.json',
-      loop: true
-    };
-    animationItem: AnimationItem;
 
     ngOnInit() {
     }
@@ -33,10 +26,6 @@ export class LoginComponent implements OnInit {
     }, error => {
     this.alertify.error(error);
     });
-    }
-
-    animationCreated(animationItem: AnimationItem) {
-      this.animationItem = animationItem;
     }
 
 }
