@@ -34,13 +34,6 @@
     animation: mymove 8s linear infinite;
   }
 
-  .wave3 {
-    left: -40%;
-    opacity: 30%;
-    bottom: -30px;
-    animation: mymove 3s linear infinite;
-  }
-
   @keyframes mymove {
     from {left: -500px}
     to {left: 0}
