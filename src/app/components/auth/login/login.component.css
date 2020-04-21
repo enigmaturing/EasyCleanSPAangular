@@ -15,23 +15,12 @@
     background: url(http://www.javiergonzalez.de/easyclean/bluewave.png);
     background-size: 50% 100%;  /* IMPORTANT: We set the half of the widht for the background -> 200% / 2 = 100% */
     background-repeat: repeat-x;
-    position: absolute;
-    opacity: 50%;
-  }
-
-  .wave1 {
     left: -100%;
-    opacity: 50%;
+    position: relative;
     animation: mymove 5s linear infinite;
+    opacity: 50%;
   }
   
-  .wave2 {
-    left: -30%;
-    opacity: 30%;
-    bottom: -30px;
-    animation: mymove 8s linear infinite;
-  }
-
   @keyframes mymove {
     from {left: -100%}
     to {left: 0%}
