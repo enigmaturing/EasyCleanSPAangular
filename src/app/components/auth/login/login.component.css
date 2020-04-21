@@ -12,9 +12,8 @@
  .wave {
     height: 100%;
     width: 200%;
-    background: url(http://www.javiergonzalez.de/easyclean/wave.svg);
-    background-size: 500px 150px;
-    bottom: -3px;
+    background: url(http://www.javiergonzalez.de/easyclean/bluewave.png);
+    background-size: 50% 100%;  /* IMPORTANT: We set the half of the widht for the background -> 200% / 2 = 100% */
     background-repeat: repeat-x;
     position: absolute;
     opacity: 50%;
@@ -35,6 +34,6 @@
   }
 
   @keyframes mymove {
-    from {left: -500px}
-    to {left: 0}
+    from {left: -100%}
+    to {left: 0%}
   }
